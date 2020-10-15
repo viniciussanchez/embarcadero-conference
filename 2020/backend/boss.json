@@ -1,0 +1,16 @@
+{
+	"name": "backend",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "src",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/handle-exception": "^0.1.4",
+		"github.com/hashload/horse": "^v2.0.1",
+		"github.com/hashload/horse-cors": "^1.0.2",
+		"github.com/hashload/horse-logger": "^0.1.5",
+		"github.com/hashload/jhonson": "^1.0.6",
+		"github.com/viniciussanchez/dataset-serialize": "^v2.2.0"
+	}
+}
