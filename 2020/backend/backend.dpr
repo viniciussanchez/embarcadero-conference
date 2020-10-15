@@ -1,4 +1,4 @@
-program crud;
+program backend;
 
 {$APPTYPE CONSOLE}
 {$R *.res}
