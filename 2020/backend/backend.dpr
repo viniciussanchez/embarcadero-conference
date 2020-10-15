@@ -21,7 +21,7 @@ begin
     .Use(THorseLogger.New())
     .Use(CORS);
 
-  Controllers.Produto.Registry;
+  Controllers.Product.Registry;
 
   THorse.Listen(9000);
 end.
