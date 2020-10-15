@@ -1,2 +1,0 @@
-inherited ServiceProduto: TServiceProduto
-end

@@ -1,8 +1,8 @@
-unit Controllers.Produto;
+unit Controllers.Product;
 
 interface
 
-uses Horse, Services.Produto;
+uses Horse, Services.Product, DataSet.Serialize;
 
 procedure Registry;
 
@@ -10,9 +10,9 @@ implementation
 
 procedure DoListProducts(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
-  LService: TServiceProduto;
+  LService: TServiceProduct;
 begin
-  LService := TServiceProduto.Create;
+  LService := TServiceProduct.Create;
   try
 
   finally
@@ -22,9 +22,9 @@ end;
 
 procedure DoGetProduct(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
-  LService: TServiceProduto;
+  LService: TServiceProduct;
 begin
-  LService := TServiceProduto.Create;
+  LService := TServiceProduct.Create;
   try
 
   finally
@@ -34,9 +34,9 @@ end;
 
 procedure DoPostProduct(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
-  LService: TServiceProduto;
+  LService: TServiceProduct;
 begin
-  LService := TServiceProduto.Create;
+  LService := TServiceProduct.Create;
   try
 
   finally
@@ -46,9 +46,9 @@ end;
 
 procedure DoPutProduct(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
-  LService: TServiceProduto;
+  LService: TServiceProduct;
 begin
-  LService := TServiceProduto.Create;
+  LService := TServiceProduct.Create;
   try
 
   finally
@@ -58,9 +58,9 @@ end;
 
 procedure DoDeleteProduct(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
-  LService: TServiceProduto;
+  LService: TServiceProduct;
 begin
-  LService := TServiceProduto.Create;
+  LService := TServiceProduct.Create;
   try
 
   finally
@@ -70,11 +70,11 @@ end;
 
 procedure Registry;
 begin
-  THorse.Get('/produtos', DoListProducts);
-  THorse.Get('/produtos/:id', DoGetProduct);
-  THorse.Post('/produtos', DoPostProduct);
-  THorse.Put('/produtos/:id', DoPutProduct);
-  THorse.Delete('/produtos/:id', DoDeleteProduct);
+  THorse.Get('/products', DoListProducts);
+  THorse.Get('/products/:id', DoGetProduct);
+  THorse.Post('/products', DoPostProduct);
+  THorse.Put('/products/:id', DoPutProduct);
+  THorse.Delete('/products/:id', DoDeleteProduct);
 end;
 
 end.

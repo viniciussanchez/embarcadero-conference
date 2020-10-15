@@ -10,9 +10,9 @@ uses
   Horse.HandleException,
   Horse.CORS,
   System.SysUtils,
-  Controllers.Produto in 'src\controllers\Controllers.Produto.pas',
+  Controllers.Product in 'src\controllers\Controllers.Product.pas',
   Providers.Connection in 'src\providers\Providers.Connection.pas' {ProviderConnection: TDataModule},
-  Services.Produto in 'src\services\Services.Produto.pas' {ServiceProduto: TDataModule};
+  Services.Product in 'src\services\Services.Product.pas' {ServiceProduct: TDataModule};
 
 begin
   THorse

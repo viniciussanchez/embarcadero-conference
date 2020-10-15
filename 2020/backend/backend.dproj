@@ -158,14 +158,14 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="src\controllers\Controllers.Produto.pas"/>
+        <DCCReference Include="src\controllers\Controllers.Product.pas"/>
         <DCCReference Include="src\providers\Providers.Connection.pas">
             <Form>ProviderConnection</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="src\services\Services.Produto.pas">
-            <Form>ServiceProduto</Form>
+        <DCCReference Include="src\services\Services.Product.pas">
+            <Form>ServiceProduct</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
