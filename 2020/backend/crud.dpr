@@ -11,7 +11,8 @@ uses
   Horse.CORS,
   System.SysUtils,
   Controllers.Produto in 'src\controllers\Controllers.Produto.pas',
-  Providers.Connection in 'src\providers\Providers.Connection.pas' {ProviderConnection: TDataModule};
+  Providers.Connection in 'src\providers\Providers.Connection.pas' {ProviderConnection: TDataModule},
+  Services.Produto in 'src\services\Services.Produto.pas' {ServiceProduto: TDataModule};
 
 begin
   THorse

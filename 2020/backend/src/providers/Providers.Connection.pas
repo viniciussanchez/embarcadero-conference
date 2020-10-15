@@ -6,6 +6,8 @@ uses System.SysUtils, System.Classes;
 
 type
   TProviderConnection = class(TDataModule)
+  public
+    constructor Create; reintroduce;
   end;
 
 var
@@ -14,5 +16,10 @@ var
 implementation
 
 {$R *.dfm}
+
+constructor TProviderConnection.Create;
+begin
+  inherited Create(nil);
+end;
 
 end.
