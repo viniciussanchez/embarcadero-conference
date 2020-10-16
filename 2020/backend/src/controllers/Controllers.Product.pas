@@ -2,7 +2,7 @@ unit Controllers.Product;
 
 interface
 
-uses Horse, Services.Product, DataSet.Serialize;
+uses Horse, Services.Product, DataSet.Serialize, System.JSON, System.SysUtils, Data.DB;
 
 procedure Registry;
 
@@ -14,7 +14,7 @@ var
 begin
   LService := TServiceProduct.Create;
   try
-
+    Res.Send<TJSONArray>(LService.ListAll.ToJSONArray());
   finally
     LService.Free;
   end;
@@ -22,11 +22,15 @@ end;
 
 procedure DoGetProduct(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
+  LId: Int64;
   LService: TServiceProduct;
 begin
   LService := TServiceProduct.Create;
   try
-
+    LId := Req.Params['id'].ToInt64;
+    if LService.GetById(LId).IsEmpty then
+      raise EHorseException.Create(THTTPStatus.NotFound, 'Not found');
+    Res.Send<TJSONObject>(LService.qryProducts.ToJSONObject());
   finally
     LService.Free;
   end;
@@ -38,7 +42,7 @@ var
 begin
   LService := TServiceProduct.Create;
   try
-
+    Res.Send<TJSONObject>(LService.Insert(Req.Body<TJSONObject>).ToJSONObject()).Status(THTTPStatus.Created);
   finally
     LService.Free;
   end;
@@ -46,11 +50,15 @@ end;
 
 procedure DoPutProduct(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
+  LId: Int64;
   LService: TServiceProduct;
 begin
   LService := TServiceProduct.Create;
   try
-
+    LId := Req.Params['id'].ToInt64;
+    if LService.GetById(LId).IsEmpty then
+      raise EHorseException.Create(THTTPStatus.NotFound, 'Not found');
+    Res.Send<TJSONObject>(LService.Update(Req.Body<TJSONObject>).ToJSONObject());
   finally
     LService.Free;
   end;
@@ -58,11 +66,16 @@ end;
 
 procedure DoDeleteProduct(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
+  LId: Int64;
   LService: TServiceProduct;
 begin
   LService := TServiceProduct.Create;
   try
-
+    LId := Req.Params['id'].ToInt64;
+    if LService.GetById(LId).IsEmpty then
+      raise EHorseException.Create(THTTPStatus.NotFound, 'Not found');
+    if LService.Delete(LId) then
+      Res.Status(THTTPStatus.NoContent);
   finally
     LService.Free;
   end;
