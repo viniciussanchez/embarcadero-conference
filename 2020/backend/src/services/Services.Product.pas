@@ -29,7 +29,7 @@ uses DataSet.Serialize;
 function TServiceProduct.Delete(const AId: Int64): Boolean;
 begin
   qryProducts.Delete;
-  Result := qryProducts.ApplyUpdates(0) = 0;
+  Result := qryProducts.IsEmpty;
 end;
 
 function TServiceProduct.GetById(const AId: Int64): TFDQuery;
@@ -46,7 +46,6 @@ begin
   qryProducts.SQL.Add('where 1 <> 1');
   qryProducts.Open();
   qryProducts.LoadFromJSON(AProduct, False);
-  qryProducts.ApplyUpdates(0);
 end;
 
 function TServiceProduct.ListAll: TFDQuery;
@@ -59,7 +58,6 @@ function TServiceProduct.Update(const AProduct: TJSONObject): TFDQuery;
 begin
   Result := qryProducts;
   qryProducts.MergeFromJSONObject(AProduct, False);
-  qryProducts.ApplyUpdates(0);
 end;
 
 end.
