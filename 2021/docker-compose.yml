@@ -1,0 +1,27 @@
+version: "3.0"
+
+services: 
+  first-horse-api:
+    image: viniciussanchez/api
+    container_name: firs-horse-api
+    ports: 
+      - "9001:9000"
+    environment:
+      - PONG=1
+
+  second-horse-api:
+    image: viniciussanchez/api
+    container_name: second-horse-api
+    ports: 
+      - "9002:9000"
+    environment:
+      - PONG=2
+
+  ngnix-server:
+    image: viniciussanchez/nginx
+    container_name: nginx
+    ports: 
+      - "8080:80"
+    depends_on: 
+      - first-horse-api
+      - second-horse-api
