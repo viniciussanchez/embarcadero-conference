@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  loki:
+    image: grafana/loki
+    container_name: loki
+    volumes:
+      - ./loki:/data/loki
+    networks:
+      - loki_net
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    volumes:
+      - ./grafana:/var/lib/grafana
+    depends_on:
+      - loki
+    ports:
+      - 3000:3000
+    networks:
+      - loki_net
+
+  nginx:
+    image: laurentbel/nginx-basic-auth
+    container_name: nginx
+    ports:
+      - 80:80
+    depends_on:
+      - loki
+    environment:  
+      - FORWARD_HOST=loki
+      - FORWARD_PORT=3100
+      - BASIC_PASSWORD=123456
+      - BASIC_USERNAME=ec2022
+    networks:
+      - loki_net
+
+networks:
+  loki_net:
+    name: loki_net

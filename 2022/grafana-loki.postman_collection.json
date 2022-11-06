@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "a765027c-9eec-428c-927e-a59e0db44305",
+		"name": "Grafana Loki",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7298242"
+	},
+	"item": [
+		{
+			"name": "Info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/loki/api/v1/status/buildinfo",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"loki",
+						"api",
+						"v1",
+						"status",
+						"buildinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"streams\": [\r\n        {\r\n            \"stream\": {\r\n                \"client\": \"postman\"\r\n            },\r\n            \"values\": [\r\n                [\r\n                    \"1667698641000000000\",\r\n                    \"mensagem=\\\"3. Log de erro\\\"\"\r\n                ]\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/loki/api/v1/push",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"loki",
+						"api",
+						"v1",
+						"push"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "ec2022",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "123456",
+			"type": "string"
+		},
+		{
+			"key": "unix_epoch_in_nanoseconds",
+			"value": "1667683341",
+			"type": "string"
+		}
+	]
+}
