@@ -1,0 +1,132 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{91C9F0A1-853B-46C0-BEBB-C892C26162C0}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Exemplos\BreakPoint\BreakPoint.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exemplos\DataExplorer\DataExplorer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exemplos\HistoryManager\HistoryManager.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exemplos\MultiPaste\MultiPaste.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exemplos\RecordMacro\RecordMacro.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exemplos\StrictPrivate\StrictPrivate.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exemplos\ClassOperators\ClassOperators.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exemplos\XmlDocumentation\XmlDocumentation.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exemplos\JsonAttributes\JsonAttributes.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="BreakPoint">
+        <MSBuild Projects="Exemplos\BreakPoint\BreakPoint.dproj"/>
+    </Target>
+    <Target Name="BreakPoint:Clean">
+        <MSBuild Projects="Exemplos\BreakPoint\BreakPoint.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BreakPoint:Make">
+        <MSBuild Projects="Exemplos\BreakPoint\BreakPoint.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DataExplorer">
+        <MSBuild Projects="Exemplos\DataExplorer\DataExplorer.dproj"/>
+    </Target>
+    <Target Name="DataExplorer:Clean">
+        <MSBuild Projects="Exemplos\DataExplorer\DataExplorer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DataExplorer:Make">
+        <MSBuild Projects="Exemplos\DataExplorer\DataExplorer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HistoryManager">
+        <MSBuild Projects="Exemplos\HistoryManager\HistoryManager.dproj"/>
+    </Target>
+    <Target Name="HistoryManager:Clean">
+        <MSBuild Projects="Exemplos\HistoryManager\HistoryManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HistoryManager:Make">
+        <MSBuild Projects="Exemplos\HistoryManager\HistoryManager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MultiPaste">
+        <MSBuild Projects="Exemplos\MultiPaste\MultiPaste.dproj"/>
+    </Target>
+    <Target Name="MultiPaste:Clean">
+        <MSBuild Projects="Exemplos\MultiPaste\MultiPaste.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MultiPaste:Make">
+        <MSBuild Projects="Exemplos\MultiPaste\MultiPaste.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RecordMacro">
+        <MSBuild Projects="Exemplos\RecordMacro\RecordMacro.dproj"/>
+    </Target>
+    <Target Name="RecordMacro:Clean">
+        <MSBuild Projects="Exemplos\RecordMacro\RecordMacro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RecordMacro:Make">
+        <MSBuild Projects="Exemplos\RecordMacro\RecordMacro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StrictPrivate">
+        <MSBuild Projects="Exemplos\StrictPrivate\StrictPrivate.dproj"/>
+    </Target>
+    <Target Name="StrictPrivate:Clean">
+        <MSBuild Projects="Exemplos\StrictPrivate\StrictPrivate.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StrictPrivate:Make">
+        <MSBuild Projects="Exemplos\StrictPrivate\StrictPrivate.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ClassOperators">
+        <MSBuild Projects="Exemplos\ClassOperators\ClassOperators.dproj"/>
+    </Target>
+    <Target Name="ClassOperators:Clean">
+        <MSBuild Projects="Exemplos\ClassOperators\ClassOperators.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ClassOperators:Make">
+        <MSBuild Projects="Exemplos\ClassOperators\ClassOperators.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="XmlDocumentation">
+        <MSBuild Projects="Exemplos\XmlDocumentation\XmlDocumentation.dproj"/>
+    </Target>
+    <Target Name="XmlDocumentation:Clean">
+        <MSBuild Projects="Exemplos\XmlDocumentation\XmlDocumentation.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="XmlDocumentation:Make">
+        <MSBuild Projects="Exemplos\XmlDocumentation\XmlDocumentation.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JsonAttributes">
+        <MSBuild Projects="Exemplos\JsonAttributes\JsonAttributes.dproj"/>
+    </Target>
+    <Target Name="JsonAttributes:Clean">
+        <MSBuild Projects="Exemplos\JsonAttributes\JsonAttributes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JsonAttributes:Make">
+        <MSBuild Projects="Exemplos\JsonAttributes\JsonAttributes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="BreakPoint;DataExplorer;HistoryManager;MultiPaste;RecordMacro;StrictPrivate;ClassOperators;XmlDocumentation;JsonAttributes"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="BreakPoint:Clean;DataExplorer:Clean;HistoryManager:Clean;MultiPaste:Clean;RecordMacro:Clean;StrictPrivate:Clean;ClassOperators:Clean;XmlDocumentation:Clean;JsonAttributes:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="BreakPoint:Make;DataExplorer:Make;HistoryManager:Make;MultiPaste:Make;RecordMacro:Make;StrictPrivate:Make;ClassOperators:Make;XmlDocumentation:Make;JsonAttributes:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

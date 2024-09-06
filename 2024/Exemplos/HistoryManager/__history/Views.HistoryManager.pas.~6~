@@ -1,0 +1,43 @@
+unit Views.HistoryManager;
+
+interface
+
+uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms,
+  Vcl.Dialogs, Vcl.ExtCtrls;
+
+type
+  TFrmHistoryManager = class(TForm)
+    pnlContent: TPanel;
+  private
+    procedure Somar;
+    procedure Dividir;
+    procedure Subtrair;
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmHistoryManager: TFrmHistoryManager;
+
+implementation
+
+{$R *.dfm}
+
+{ TFrmHistoryManager }
+
+procedure TFrmHistoryManager.Dividir;
+begin
+
+end;
+
+procedure TFrmHistoryManager.Somar;
+begin
+
+end;
+
+procedure TFrmHistoryManager.Subtrair;
+begin
+
+end;
+
+end.
