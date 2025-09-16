@@ -6,3 +6,4 @@
 * [**2022**](https://github.com/viniciussanchez/embarcadero-conference/tree/master/2022) - Centralização de logs com Grafana Loki
 * [**2023**](https://github.com/viniciussanchez/embarcadero-conference/tree/master/2023) - Como que o uso de interfaces pode preparar a sua aplicação para o futuro
 * [**2024**](https://github.com/viniciussanchez/embarcadero-conference/tree/master/2024) - Dicas, truques e magias com Delphi
+* [**2025**](https://github.com/viniciussanchez/embarcadero-conference/tree/master/2025) - Webhooks para Integração entre Sistemas
