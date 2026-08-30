@@ -1,0 +1,18 @@
+services:
+  api:
+    build: ./api
+    expose:
+      - "9000"
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+
+# docker compose up -d --build
+# curl http://localhost:8080/ping
+
+# docker compose up -d --scale api=3
+# for i in 1 2 3 4 5 6; do curl -s http://localhost:8080/ping; echo; done

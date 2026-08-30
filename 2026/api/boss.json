@@ -1,0 +1,12 @@
+{
+	"name": "api",
+	"description": "API Horse simples para demo de escalabilidade horizontal - Embarcadero Conference 2026",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "src",
+	"browsingpath": "",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/horse": "^v3.3.2"
+	}
+}
